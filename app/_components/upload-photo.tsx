@@ -169,9 +169,13 @@ export function UploadPhoto({ onContinue, onImageSelect, selectedImage }: Upload
                         </button>
                     </div>
 
-                    <Button className="w-full h-12 text-lg gap-2">
+                    <Button 
+                        className="w-full h-12 text-lg gap-2"
+                        onClick={handleGeneratePhoto}
+                        disabled={generateMutation.isPending}
+                    >
                         <Sparkles className="size-5" />
-                        Gerar foto profissional
+                        {generateMutation.isPending ? "Gerando..." : "Gerar foto profissional"}
                     </Button>
                 </div>
             )}
